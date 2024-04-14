@@ -143,3 +143,6 @@ If it is successful, we should be able to see a json payload like this
     "Arn": "arn:aws:iam::123456789012:user/terraform-bootcamp-user"
 }
 ```
+
+
+We'll need to generate AWS CLI credentials from IAM user in order to use the AWS CLI
