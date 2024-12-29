@@ -74,3 +74,37 @@ We need to be careful when using the init because it will not rerun if we restar
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
+
+### Working with environment variables
+
+#### env command
+
+We can list out all the environment variables (env vars) using the `env` command
+
+We can filter out specific env vars using the `env | grep terraform`.
+
+#### Setting and unsetting env vars
+
+In the terminal we can set using the `export HELLO='world'`
+
+We can unset using the `unset HELLO`
+
+Within a bash script we can set an env var without writing export eg.
+
+```sh
+#!/usr/bin/bash
+
+HELLO='world'
+
+echo $HELLO
+```
+
+#### Printing env vars
+
+We can print an env var using `echo` eg. `echo $HELLO`
+
+#### Scoping of env vars
+
+When you open a new bash terminal in VSCode, it will not be aware of any env vars that are set in another terminal.
+
+If you want env vars to persist across all future terminals that are open, you need to set env vars in your bash profile eg. `.bash_profile`
