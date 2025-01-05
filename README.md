@@ -108,3 +108,41 @@ We can print an env var using `echo` eg. `echo $HELLO`
 When you open a new bash terminal in VSCode, it will not be aware of any env vars that are set in another terminal.
 
 If you want env vars to persist across all future terminals that are open, you need to set env vars in your bash profile eg. `.bash_profile`
+
+#### Persisting env vars in Gitpod
+
+We can persist env vars into gitpod using the gitpod secrets storage.
+
+```
+gp env HELLO='world'
+```
+
+All future workspaces  launched will set the env vars for all bash terminals opened in those workspaces.
+
+You can also set env vars in the `gitpod.yml` file, but this can contain only non-sensitive env vars.
+
+
+### AWS CLI installation
+
+AWS CLI is installed for the project through the bash script [`./bin/install_aws_cli.sh`](./bin/install_aws_cli.sh)
+
+[Getting started with AWS CLI installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+[AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+We can check if our AWS credentials is configured correctly by running the following AWS CLI command:
+```
+aws sts get-caller-identity
+```
+
+If it is successful, we should be able to see a json payload like this
+```
+{
+    "UserId": "xxxxxxxxxxxxxxx",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/tf-bootcamp"
+}
+```
+
+
+We'll need to generate AWS CLI credentials from IAM user in order to use the AWS CLI
