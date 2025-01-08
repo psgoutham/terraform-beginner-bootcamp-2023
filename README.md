@@ -1,4 +1,4 @@
-# Terraform Beginner Bootcamp 2023
+# Terraform Beginner Bootcamp
 
 ## Semantic Versioning :mage:
 
