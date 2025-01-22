@@ -146,3 +146,32 @@ If it is successful, we should be able to see a json payload like this
 
 
 We'll need to generate AWS CLI credentials from IAM user in order to use the AWS CLI
+
+
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources providers and modules from the Terraform registry, located at [registry.terraform.io](https://registry.terraform.io)
+
+- **Providers** are plugins that allow Terraform to interact with specific cloud platforms or APIs. They act as a bridge between Terraform and the underlying system we want to configure
+
+- **Modules** are reusable, logical units of code files that are used to configure the underlying system. They make it easier to organise, reuse and manage terraform code
+
+### Terraform Lock Files
+
+`.terraform.lock.hcl` contains the locked versioning for the providers and the modules that should be used with this project. Lock files **should be committed** to the version contol system (ex: github).
+
+### Terraform State Files
+
+`terraform.tfstate` file contains information about the current state of the infrastructure. THis file **should not be committed** to the version control system, as it contains sensitive data about the infrastructure.
+
+If this file is lost, we lose knowing the state of our infrastructure.
+
+`.terraform.tfstate.backup` is the previous state file.
+
+### Terraform Directory
+
+`.terraform` directory contains the binaries of terraform providers.
+
+
