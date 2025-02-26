@@ -174,4 +174,6 @@ If this file is lost, we lose knowing the state of our infrastructure.
 
 `.terraform` directory contains the binaries of terraform providers.
 
+### Terraform destroy
+This will destroy resources. We can use the --auto-approve option to skip approval prompt.
 
