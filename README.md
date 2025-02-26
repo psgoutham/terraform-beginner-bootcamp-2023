@@ -177,3 +177,5 @@ If this file is lost, we lose knowing the state of our infrastructure.
 ### Terraform destroy
 This will destroy resources. We can use the --auto-approve option to skip approval prompt.
 
+### Consideration for S3 bucket creation
+While creating an S3 bucket using the random string provider, make sure to not use upper case letters, as the name of a bucket should not contain upper case. Also avoided special characters, as bucket name accepts only (.) and (-)
