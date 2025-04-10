@@ -10,6 +10,15 @@ terraform {
       version = "5.88.0"
     }
   }
+  
+  cloud { 
+    
+    organization = "psgoutham3" 
+
+    workspaces { 
+      name = "terrahouse" 
+    } 
+  } 
 }
 
 

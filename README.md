@@ -179,3 +179,33 @@ This will destroy resources. We can use the --auto-approve option to skip approv
 
 ### Consideration for S3 bucket creation
 While creating an S3 bucket using the random string provider, make sure to not use upper case letters, as the name of a bucket should not contain upper case. Also avoided special characters, as bucket name accepts only (.) and (-)
+
+
+## Issues with Terraform Cloud Login and Gitpod workspace
+
+When attempting to "run" terraform login, it will launch in bash a WISWIG view to generate a token. However it does not work as expected in gitpod VS Code environment in browser. 
+
+The workaround is to manually generate a token in Terraform Cloud (link below)
+
+```
+https://app.terraform.io/app/settings/tokens?source=terraform-login
+```
+
+Then create a file manually in the below path, and copy the token generated on app.terraform.io to this file, in the specified json format:
+
+```
+/home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Use the ```open /home/gitpod/.terraform.d/credentials.tfrc.json``` command in bash to open the file in gitpod, and paste the below json format:
+
+```
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR TOKEN HERE"
+    }
+  }
+}
+```
+
