@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+ALIAS_COMMAND='alias tf="terraform"'
+PROFILE_FILE="$HOME/.bash_profile"
+
+# Check if alias already exists
+if grep -Fxq "$ALIAS_COMMAND" "$PROFILE_FILE"; then
+    echo "Alias already exists in $PROFILE_FILE"
+else
+    echo "$ALIAS_COMMAND" >> "$PROFILE_FILE"
+    echo "Alias added to $PROFILE_FILE"
+fi
+
+# Optional: Source the file immediately (only works in interactive shell)
+source $PROFILE_FILE
