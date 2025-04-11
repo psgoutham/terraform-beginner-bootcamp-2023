@@ -209,3 +209,7 @@ Use the ```open /home/gitpod/.terraform.d/credentials.tfrc.json``` command in ba
 }
 ```
 
+## Automating generation of terraform cloud token
+
+The previous process of generating and referencing terraform cloud token is automated using an env var and referencing the env var using a bash script. The bash script is located in [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
